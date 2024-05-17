@@ -1,9 +1,21 @@
 import React from 'react';
 import Contact from './Contact';
 import PropTypes from 'prop-types';
+import { getContacts } from 'redux/selectors';
+import { getFilter } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+import { deleteContact } from 'redux/contactsSlice';
+import { useDispatch } from 'react-redux';
 
-const ContactList = (props) => {
-  const { contacts, filter, deleteFunction } = props;
+
+const ContactList = () => {
+    const contacts = useSelector(getContacts);
+    const filter = useSelector(getFilter);
+    const dispatch = useDispatch();
+  
+    const handleDelete = e => {
+      dispatch(deleteContact(e.target.id));
+    };
   return (
     <ul>
       {contacts
@@ -12,7 +24,7 @@ const ContactList = (props) => {
           return (
             <Contact key={contact.id}>
               {contact.name} : {contact.number}{' '}
-              <button id={contact.id} onClick={deleteFunction}>
+              <button id={contact.id} onClick={handleDelete}>
                 Delete
               </button>
             </Contact>
