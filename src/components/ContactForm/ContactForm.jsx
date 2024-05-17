@@ -15,7 +15,7 @@ const ContactForm = () => {
     const form = e.currentTarget;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-    const isInBase = contacts.filter(
+    const isInBase = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (!isInBase) {
