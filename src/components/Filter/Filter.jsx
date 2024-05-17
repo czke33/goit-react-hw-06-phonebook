@@ -2,7 +2,18 @@ import React from "react";
 import style from "./filter.module.css";
 import PropTypes from "prop-types";
 
-const Filter = ({ changeHandler }) => {
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
+
+const Filter = () => {
+  const dispatch = useDispatch();
+
+  const changeHandler = e => {
+    const filterValue = e.target.value;
+    dispatch(setFilter(filterValue));
+  };
+
+
   return (
     <div className={style.container}>
       <span>Find contacts by name</span>
