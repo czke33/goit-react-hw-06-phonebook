@@ -1,10 +1,10 @@
 import React from 'react';
 import Contact from './Contact';
 import PropTypes from 'prop-types';
-import { getContacts } from 'redux/selectors';
-import { getFilter } from 'redux/selectors';
+import { getContacts } from '../../redux/selectors';
+import { getFilter } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from '../../redux/constactsSlice';
 import { useDispatch } from 'react-redux';
 
 

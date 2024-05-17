@@ -3,7 +3,7 @@ import style from "./filter.module.css";
 import PropTypes from "prop-types";
 
 import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from '../../redux/filterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();

@@ -5,7 +5,7 @@ import Filter from "./Filter/Filter";
 import ContactList from "./ContactList/ContactList";
 
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { getContacts } from '../redux/selectors';
  
 const KEY = "Contacts";
 
@@ -24,15 +24,11 @@ const App = () => {
     return (
       <div className={style.container}>
         <h1>Phonebook</h1>
-        <ContactForm onSubmit={addContact} />
+        <ContactForm  />
 
         <h2>Contacts</h2>
-        <Filter changeHandler={changeFilterValue} />
-        <ContactList
-          filter={filter}
-          contacts={contacts}
-          deleteFunction={deleteUser}
-        ></ContactList>
+        <Filter  />
+        <ContactList />
       </div>
     );
   }
